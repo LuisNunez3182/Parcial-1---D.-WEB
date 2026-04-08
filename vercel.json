@@ -1,13 +1,21 @@
 {
     "functions": {
-        "public/**/*.php": {
-            "runtime": "vercel-php@0.7.0"
+        "public/*.php": {
+            "runtime": "vercel-php@0.7.2"
         },
-        "src/**/*.php": {
-            "runtime": "vercel-php@0.7.0"
+        "src/*.php": {
+            "runtime": "vercel-php@0.7.2"
         }
     },
     "routes": [
+        {
+            "src": "/assets/(.*)",
+            "dest": "/public/assets/$1"
+        },
+        {
+            "src": "/src/(.*)",
+            "dest": "/src/$1"
+        },
         {
             "src": "/",
             "dest": "/public/login.php"
