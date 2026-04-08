@@ -29,8 +29,12 @@ La arquitectura del proyecto está dividida en tres módulos principales para se
 
 ## Dinámica y Flujo del Sistema
 
-Este software está enteramente orientado a ejecutarse **sin Base de Datos SQL subyacentes**, construyendo la validación, el catálogo y las operaciones sobre arreglos virtuales integrados en los códigos base como `[$Usuarios]` y `[$Productos]`. Todo el control y estado de vida de la información se perpetúan a través de interconexiones a las súper variables `$_SESSION`, por lo tanto:
+Este software está enteramente orientado a ejecutarse **sin BD**, construyendo la validación, el catálogo y las operaciones sobre arreglos virtuales integrados en los códigos base como `[$Usuarios]` y `[$Productos]`. Todo el control y estado de vida de la información se perpetúan a través de interconexiones a las súper variables `$_SESSION`, por lo tanto:
 
 - Las URLs hacen un uso riguroso y sanitizado de peticiones de método `GET` para orquestar adiciones visuales al carrito, revisiones o cancelaciones del historial sin colapsar el progreso general del lado del servidor.
 - El ingreso al sistema se protege con verificadores que obligan a realizar recálculos de acceso al principio de cada vista protegida y formulario por la regla central de **Solo Usuarios Autenticados**.
 - Gracias a la lógica central, el carrito de los usuarios que abandonan una vista o actúan en un formulario no es duplicado cuando éstos recargan la ventana forzosamente en su navegador.
+
+## Autores
+* Luis Ernesto Nuñez Celis
+* Justin Gamarra Salas
